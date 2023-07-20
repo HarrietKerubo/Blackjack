@@ -8,11 +8,17 @@
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <h1>BlackJack</h1>
+    <h1>Blackjack</h1>
     <p id="message-el">Want to play a round?</p>
-    <p>Cards:</p>
+    <p id="card-el">Cards:</p>
     <p id="sum-el">Sum:</p>
-    <button onclick="startgame()">START GAME</button>
+    <div class="buttons">
+      <button onclick="startGame()">START GAME</button>
+    </div>
+    <div class="buttons">
+      <button onclick="newCard()">NEW CARD</button>
+    </div>
+
     <script src="index.js"></script>
   </body>
 </html>
