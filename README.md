@@ -1,6 +1,6 @@
-**Blackjack Game Javascript**
+# Blackjack Game Javascript
 
-**DESCRIPTION** </br>
+**Description** </br>
 </br>
 This Javascript application depicts the blackjack game where a player draws random cards and wins the game if they select cards that add up to 21, stay in the game if sum of cards is less than 21, or is kicked out of the game if sum of cards is more than 21 </br>
 
