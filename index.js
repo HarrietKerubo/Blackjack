@@ -1,14 +1,25 @@
-let firstCard = getRandomCards();
-let secondCard = getRandomCards();
-let cards = [firstCard, secondCard];
-let sum = firstCard + secondCard;
+let sum = 0;
 let hasBlackJack = false;
-let isAlive = true;
+let isAlive = false;
 let messageEL = document.getElementById("message-el");
 let sumEl = document.querySelector("#sum-el");
 let cardEl = document.querySelector("#card-el");
-
+let cards = [];
 let message = "";
+
+let player = {
+  name: "Harriet",
+  chips: 145,
+  sayHello: function () {
+    alert("Hello!");
+  },
+};
+
+player.sayHello();
+
+let playerEl = document.querySelector("#player-el");
+
+playerEl.textContent = player.name + ": $ " + player.chips;
 
 function getRandomCards() {
   let randomNumber = Math.floor(Math.random() * 13) + 1;
@@ -22,6 +33,11 @@ function getRandomCards() {
 }
 
 function startGame() {
+  isAlive = true;
+  let firstCard = getRandomCards();
+  let secondCard = getRandomCards();
+  cards = [firstCard, secondCard];
+  sum = firstCard + secondCard;
   renderGame();
 }
 
@@ -45,8 +61,10 @@ function renderGame() {
 }
 
 function newCard() {
-  let card = getRandomCards();
-  cards.push(card);
-  sum += card;
-  renderGame();
+  if (isAlive === true && hasBlackJack === false) {
+    let cardNew = getRandomCards();
+    cards.push(cardNew);
+    sum += cardNew;
+    renderGame();
+  }
 }
